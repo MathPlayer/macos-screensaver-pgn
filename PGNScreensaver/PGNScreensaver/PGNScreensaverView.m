@@ -36,7 +36,31 @@
 
 - (void)animateOneFrame
 {
-    return;
+    CGFloat minDimension = self.frame.size.width;
+    if (minDimension > self.frame.size.height) {
+        minDimension = self.frame.size.height;
+    }
+    // Use only 3/4 of the minDimension
+    minDimension *= 0.75;
+
+    CGPoint bottomLeft = CGPointMake(self.frame.size.width / 2 - minDimension / 2,
+                                     self.frame.size.height / 2 - minDimension / 2);
+    CGFloat sqSize = minDimension / 8;
+
+    for (int i = 0; i < 8; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            NSRect r = NSMakeRect(bottomLeft.x + i * sqSize,
+                                  bottomLeft.y + j * sqSize,
+                                  sqSize,
+                                  sqSize);
+            if ((i + j) % 2) {
+                [NSColor.redColor set];
+            } else {
+                [NSColor.greenColor set];
+            }
+            NSRectFill(r);
+        }
+    }
 }
 
 - (BOOL)hasConfigureSheet
