@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */; };
+		D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */; };
 		D8FDAA4120402A3900B84225 /* PGNScreensaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */; };
 		D8FDAA4320402A3900B84225 /* PGNScreensaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+ChessBoardColor.h"; sourceTree = "<group>"; };
+		D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ChessBoardColor.m"; sourceTree = "<group>"; };
 		D8FDAA3D20402A3900B84225 /* PGNScreensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGNScreensaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGNScreensaverView.h; sourceTree = "<group>"; };
 		D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGNScreensaverView.m; sourceTree = "<group>"; };
@@ -51,6 +55,8 @@
 				D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */,
 				D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */,
 				D8FDAA4420402A3900B84225 /* Info.plist */,
+				D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */,
+				D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */,
 			);
 			path = PGNScreensaver;
 			sourceTree = "<group>";
@@ -62,6 +68,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */,
 				D8FDAA4120402A3900B84225 /* PGNScreensaverView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8FDAA4320402A3900B84225 /* PGNScreensaverView.m in Sources */,
+				D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

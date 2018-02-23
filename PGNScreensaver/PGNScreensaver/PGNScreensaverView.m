@@ -8,6 +8,8 @@
 
 #import "PGNScreensaverView.h"
 
+#import "NSColor+ChessBoardColor.h"
+
 @implementation PGNScreensaverView
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
@@ -54,9 +56,9 @@
                                   sqSize,
                                   sqSize);
             if ((i + j) % 2) {
-                [NSColor.redColor set];
+                [NSColor.chessBoardBrownDarkColor set];
             } else {
-                [NSColor.greenColor set];
+                [NSColor.chessBoardBrownLightColor set];
             }
             NSRectFill(r);
         }
