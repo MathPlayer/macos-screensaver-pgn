@@ -1,2 +1,5 @@
 # Xcode-specific files
 xcuserdata/
+
+# Piece images
+*.svg

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8079E2A2042D2B900D683F4 /* Chess_qlt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E1E2042D2B900D683F4 /* Chess_qlt45.svg */; };
+		D8079E2B2042D2B900D683F4 /* Chess_rlt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E1F2042D2B900D683F4 /* Chess_rlt45.svg */; };
+		D8079E2C2042D2B900D683F4 /* Chess_klt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E202042D2B900D683F4 /* Chess_klt45.svg */; };
+		D8079E2D2042D2B900D683F4 /* Chess_pdt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E212042D2B900D683F4 /* Chess_pdt45.svg */; };
+		D8079E2E2042D2B900D683F4 /* Chess_nlt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E222042D2B900D683F4 /* Chess_nlt45.svg */; };
+		D8079E2F2042D2B900D683F4 /* Chess_bdt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E232042D2B900D683F4 /* Chess_bdt45.svg */; };
+		D8079E302042D2B900D683F4 /* Chess_plt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E242042D2B900D683F4 /* Chess_plt45.svg */; };
+		D8079E312042D2B900D683F4 /* Chess_rdt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E252042D2B900D683F4 /* Chess_rdt45.svg */; };
+		D8079E322042D2B900D683F4 /* Chess_ndt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E262042D2B900D683F4 /* Chess_ndt45.svg */; };
+		D8079E332042D2B900D683F4 /* Chess_kdt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E272042D2B900D683F4 /* Chess_kdt45.svg */; };
+		D8079E342042D2B900D683F4 /* Chess_qdt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E282042D2B900D683F4 /* Chess_qdt45.svg */; };
+		D8079E352042D2B900D683F4 /* Chess_blt45.svg in Resources */ = {isa = PBXBuildFile; fileRef = D8079E292042D2B900D683F4 /* Chess_blt45.svg */; };
 		D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */; };
 		D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */; };
 		D8FDAA4120402A3900B84225 /* PGNScreensaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */; };
@@ -14,6 +26,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8079E192042C71100D683F4 /* get_images.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_images.sh; sourceTree = "<group>"; };
+		D8079E1E2042D2B900D683F4 /* Chess_qlt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_qlt45.svg; sourceTree = "<group>"; };
+		D8079E1F2042D2B900D683F4 /* Chess_rlt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_rlt45.svg; sourceTree = "<group>"; };
+		D8079E202042D2B900D683F4 /* Chess_klt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_klt45.svg; sourceTree = "<group>"; };
+		D8079E212042D2B900D683F4 /* Chess_pdt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_pdt45.svg; sourceTree = "<group>"; };
+		D8079E222042D2B900D683F4 /* Chess_nlt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_nlt45.svg; sourceTree = "<group>"; };
+		D8079E232042D2B900D683F4 /* Chess_bdt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_bdt45.svg; sourceTree = "<group>"; };
+		D8079E242042D2B900D683F4 /* Chess_plt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_plt45.svg; sourceTree = "<group>"; };
+		D8079E252042D2B900D683F4 /* Chess_rdt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_rdt45.svg; sourceTree = "<group>"; };
+		D8079E262042D2B900D683F4 /* Chess_ndt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_ndt45.svg; sourceTree = "<group>"; };
+		D8079E272042D2B900D683F4 /* Chess_kdt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_kdt45.svg; sourceTree = "<group>"; };
+		D8079E282042D2B900D683F4 /* Chess_qdt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_qdt45.svg; sourceTree = "<group>"; };
+		D8079E292042D2B900D683F4 /* Chess_blt45.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Chess_blt45.svg; sourceTree = "<group>"; };
 		D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+ChessBoardColor.h"; sourceTree = "<group>"; };
 		D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ChessBoardColor.m"; sourceTree = "<group>"; };
 		D8FDAA3D20402A3900B84225 /* PGNScreensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGNScreensaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -33,9 +58,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8079E162042C6CF00D683F4 /* Pieces */ = {
+			isa = PBXGroup;
+			children = (
+				D8079E232042D2B900D683F4 /* Chess_bdt45.svg */,
+				D8079E292042D2B900D683F4 /* Chess_blt45.svg */,
+				D8079E272042D2B900D683F4 /* Chess_kdt45.svg */,
+				D8079E202042D2B900D683F4 /* Chess_klt45.svg */,
+				D8079E262042D2B900D683F4 /* Chess_ndt45.svg */,
+				D8079E222042D2B900D683F4 /* Chess_nlt45.svg */,
+				D8079E212042D2B900D683F4 /* Chess_pdt45.svg */,
+				D8079E242042D2B900D683F4 /* Chess_plt45.svg */,
+				D8079E282042D2B900D683F4 /* Chess_qdt45.svg */,
+				D8079E1E2042D2B900D683F4 /* Chess_qlt45.svg */,
+				D8079E252042D2B900D683F4 /* Chess_rdt45.svg */,
+				D8079E1F2042D2B900D683F4 /* Chess_rlt45.svg */,
+				D8079E192042C71100D683F4 /* get_images.sh */,
+			);
+			path = Pieces;
+			sourceTree = "<group>";
+		};
 		D8FDAA3320402A3900B84225 = {
 			isa = PBXGroup;
 			children = (
+				D8079E162042C6CF00D683F4 /* Pieces */,
 				D8FDAA3F20402A3900B84225 /* PGNScreensaver */,
 				D8FDAA3E20402A3900B84225 /* Products */,
 			);
@@ -80,6 +126,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D8FDAA4720402A3900B84225 /* Build configuration list for PBXNativeTarget "PGNScreensaver" */;
 			buildPhases = (
+				D8079E1D2042CC6200D683F4 /* ShellScript */,
 				D8FDAA3820402A3900B84225 /* Sources */,
 				D8FDAA3920402A3900B84225 /* Frameworks */,
 				D8FDAA3A20402A3900B84225 /* Headers */,
@@ -131,10 +178,38 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8079E2A2042D2B900D683F4 /* Chess_qlt45.svg in Resources */,
+				D8079E2F2042D2B900D683F4 /* Chess_bdt45.svg in Resources */,
+				D8079E2B2042D2B900D683F4 /* Chess_rlt45.svg in Resources */,
+				D8079E322042D2B900D683F4 /* Chess_ndt45.svg in Resources */,
+				D8079E2E2042D2B900D683F4 /* Chess_nlt45.svg in Resources */,
+				D8079E2C2042D2B900D683F4 /* Chess_klt45.svg in Resources */,
+				D8079E312042D2B900D683F4 /* Chess_rdt45.svg in Resources */,
+				D8079E342042D2B900D683F4 /* Chess_qdt45.svg in Resources */,
+				D8079E302042D2B900D683F4 /* Chess_plt45.svg in Resources */,
+				D8079E352042D2B900D683F4 /* Chess_blt45.svg in Resources */,
+				D8079E332042D2B900D683F4 /* Chess_kdt45.svg in Resources */,
+				D8079E2D2042D2B900D683F4 /* Chess_pdt45.svg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D8079E1D2042CC6200D683F4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "exec ${PROJECT_DIR}/Pieces/get_images.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D8FDAA3820402A3900B84225 /* Sources */ = {
