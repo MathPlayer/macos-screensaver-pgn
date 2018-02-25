@@ -53,12 +53,27 @@
 
 - (BOOL)hasConfigureSheet
 {
-    return NO;
+    return YES;
 }
 
 - (NSWindow*)configureSheet
 {
-    return nil;
+    if (![optionsSheet isKindOfClass:NSPanel.class]) {
+        [[NSBundle bundleForClass:self.class] loadNibNamed:@"OptionsSheet"
+                                                     owner:self
+                                           topLevelObjects:nil];
+    }
+    
+    return optionsSheet;
 }
 
+- (IBAction)cancelClick:(id)sender
+{
+    [[NSApplication sharedApplication] endSheet:optionsSheet];
+}
+
+- (IBAction)okClick:(id)sender
+{
+    [[NSApplication sharedApplication] endSheet:optionsSheet];
+}
 @end

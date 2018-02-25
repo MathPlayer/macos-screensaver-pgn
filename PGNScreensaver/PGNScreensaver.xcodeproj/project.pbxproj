@@ -25,6 +25,7 @@
 		D8D31A50204315E9005A44AF /* ChessBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D31A4E204315E9005A44AF /* ChessBoard.m */; };
 		D8D31A5420431BC2005A44AF /* NSColor+BackGroundColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D31A5220431BC2005A44AF /* NSColor+BackGroundColor.h */; };
 		D8D31A5520431BC2005A44AF /* NSColor+BackGroundColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D31A5320431BC2005A44AF /* NSColor+BackGroundColor.m */; };
+		D8D31A5F20431EDA005A44AF /* OptionsSheet.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A5E20431EDA005A44AF /* OptionsSheet.xib */; };
 		D8FDAA4120402A3900B84225 /* PGNScreensaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */; };
 		D8FDAA4320402A3900B84225 /* PGNScreensaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */; };
 /* End PBXBuildFile section */
@@ -49,6 +50,7 @@
 		D8D31A4E204315E9005A44AF /* ChessBoard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessBoard.m; sourceTree = "<group>"; };
 		D8D31A5220431BC2005A44AF /* NSColor+BackGroundColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+BackGroundColor.h"; sourceTree = "<group>"; };
 		D8D31A5320431BC2005A44AF /* NSColor+BackGroundColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+BackGroundColor.m"; sourceTree = "<group>"; };
+		D8D31A5E20431EDA005A44AF /* OptionsSheet.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsSheet.xib; sourceTree = "<group>"; };
 		D8FDAA3D20402A3900B84225 /* PGNScreensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGNScreensaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGNScreensaverView.h; sourceTree = "<group>"; };
 		D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGNScreensaverView.m; sourceTree = "<group>"; };
@@ -66,24 +68,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D8079E162042C6CF00D683F4 /* Pieces */ = {
+		D8079E162042C6CF00D683F4 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D8D31A352042F831005A44AF /* Chess_bdt45.pdf */,
-				D8D31A3A2042F831005A44AF /* Chess_blt45.pdf */,
-				D8D31A392042F831005A44AF /* Chess_kdt45.pdf */,
-				D8D31A342042F831005A44AF /* Chess_klt45.pdf */,
-				D8D31A3D2042F832005A44AF /* Chess_ndt45.pdf */,
-				D8D31A3B2042F831005A44AF /* Chess_nlt45.pdf */,
-				D8D31A362042F831005A44AF /* Chess_pdt45.pdf */,
-				D8D31A382042F831005A44AF /* Chess_plt45.pdf */,
-				D8D31A372042F831005A44AF /* Chess_qdt45.pdf */,
-				D8D31A332042F831005A44AF /* Chess_qlt45.pdf */,
-				D8D31A3C2042F831005A44AF /* Chess_rdt45.pdf */,
-				D8D31A3E2042F832005A44AF /* Chess_rlt45.pdf */,
-				D8079E192042C71100D683F4 /* get_images.sh */,
+				D8D31A5E20431EDA005A44AF /* OptionsSheet.xib */,
+				D8D31A5720431D1C005A44AF /* Pieces */,
 			);
-			path = Pieces;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		D8D31A5120431B91005A44AF /* Colors */ = {
@@ -97,10 +88,30 @@
 			path = Colors;
 			sourceTree = "<group>";
 		};
+		D8D31A5720431D1C005A44AF /* Pieces */ = {
+			isa = PBXGroup;
+			children = (
+				D8079E192042C71100D683F4 /* get_images.sh */,
+				D8D31A352042F831005A44AF /* Chess_bdt45.pdf */,
+				D8D31A3A2042F831005A44AF /* Chess_blt45.pdf */,
+				D8D31A392042F831005A44AF /* Chess_kdt45.pdf */,
+				D8D31A342042F831005A44AF /* Chess_klt45.pdf */,
+				D8D31A3D2042F832005A44AF /* Chess_ndt45.pdf */,
+				D8D31A3B2042F831005A44AF /* Chess_nlt45.pdf */,
+				D8D31A362042F831005A44AF /* Chess_pdt45.pdf */,
+				D8D31A382042F831005A44AF /* Chess_plt45.pdf */,
+				D8D31A372042F831005A44AF /* Chess_qdt45.pdf */,
+				D8D31A332042F831005A44AF /* Chess_qlt45.pdf */,
+				D8D31A3C2042F831005A44AF /* Chess_rdt45.pdf */,
+				D8D31A3E2042F832005A44AF /* Chess_rlt45.pdf */,
+			);
+			path = Pieces;
+			sourceTree = "<group>";
+		};
 		D8FDAA3320402A3900B84225 = {
 			isa = PBXGroup;
 			children = (
-				D8079E162042C6CF00D683F4 /* Pieces */,
+				D8079E162042C6CF00D683F4 /* Resources */,
 				D8FDAA3F20402A3900B84225 /* PGNScreensaver */,
 				D8FDAA3E20402A3900B84225 /* Products */,
 			);
@@ -212,6 +223,7 @@
 				D8D31A3F2042F832005A44AF /* Chess_qlt45.pdf in Resources */,
 				D8D31A442042F832005A44AF /* Chess_plt45.pdf in Resources */,
 				D8D31A462042F832005A44AF /* Chess_blt45.pdf in Resources */,
+				D8D31A5F20431EDA005A44AF /* OptionsSheet.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +241,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "exec ${PROJECT_DIR}/Pieces/get_images.sh";
+			shellScript = "exec ${PROJECT_DIR}/Resources/Pieces/get_images.sh";
 		};
 /* End PBXShellScriptBuildPhase section */
 

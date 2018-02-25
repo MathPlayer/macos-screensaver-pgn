@@ -13,6 +13,11 @@
 @interface PGNScreensaverView : ScreenSaverView {
     ChessBoard *board;
     BOOL drawChessBoard;
+
+    IBOutlet NSPanel *optionsSheet;
 }
+
+- (IBAction)cancelClick:(id)sender;
+- (IBAction)okClick:(id)sender;
 
 @end
