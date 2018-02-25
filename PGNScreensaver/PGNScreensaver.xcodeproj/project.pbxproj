@@ -21,6 +21,8 @@
 		D8D31A482042F832005A44AF /* Chess_rdt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A3C2042F831005A44AF /* Chess_rdt45.pdf */; };
 		D8D31A492042F832005A44AF /* Chess_ndt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A3D2042F832005A44AF /* Chess_ndt45.pdf */; };
 		D8D31A4A2042F832005A44AF /* Chess_rlt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A3E2042F832005A44AF /* Chess_rlt45.pdf */; };
+		D8D31A4F204315E9005A44AF /* ChessBoard.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D31A4D204315E9005A44AF /* ChessBoard.h */; };
+		D8D31A50204315E9005A44AF /* ChessBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D31A4E204315E9005A44AF /* ChessBoard.m */; };
 		D8FDAA4120402A3900B84225 /* PGNScreensaverView.h in Headers */ = {isa = PBXBuildFile; fileRef = D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */; };
 		D8FDAA4320402A3900B84225 /* PGNScreensaverView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		D8D31A3C2042F831005A44AF /* Chess_rdt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_rdt45.pdf; sourceTree = "<group>"; };
 		D8D31A3D2042F832005A44AF /* Chess_ndt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_ndt45.pdf; sourceTree = "<group>"; };
 		D8D31A3E2042F832005A44AF /* Chess_rlt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_rlt45.pdf; sourceTree = "<group>"; };
+		D8D31A4D204315E9005A44AF /* ChessBoard.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessBoard.h; sourceTree = "<group>"; };
+		D8D31A4E204315E9005A44AF /* ChessBoard.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChessBoard.m; sourceTree = "<group>"; };
 		D8FDAA3D20402A3900B84225 /* PGNScreensaver.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PGNScreensaver.saver; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8FDAA4020402A3900B84225 /* PGNScreensaverView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PGNScreensaverView.h; sourceTree = "<group>"; };
 		D8FDAA4220402A3900B84225 /* PGNScreensaverView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PGNScreensaverView.m; sourceTree = "<group>"; };
@@ -103,6 +107,8 @@
 				D8FDAA4420402A3900B84225 /* Info.plist */,
 				D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */,
 				D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */,
+				D8D31A4D204315E9005A44AF /* ChessBoard.h */,
+				D8D31A4E204315E9005A44AF /* ChessBoard.m */,
 			);
 			path = PGNScreensaver;
 			sourceTree = "<group>";
@@ -115,6 +121,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */,
+				D8D31A4F204315E9005A44AF /* ChessBoard.h in Headers */,
 				D8FDAA4120402A3900B84225 /* PGNScreensaverView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +225,7 @@
 			files = (
 				D8FDAA4320402A3900B84225 /* PGNScreensaverView.m in Sources */,
 				D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */,
+				D8D31A50204315E9005A44AF /* ChessBoard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
