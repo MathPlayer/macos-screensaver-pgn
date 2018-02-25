@@ -39,3 +39,6 @@ for PIECE in "k" "q" "r" "b" "n" "p"; do
         eval "${CMD}"
     done
 done
+
+# TODO: automate svg->pdf conversion
+# maybe use Gapplin
