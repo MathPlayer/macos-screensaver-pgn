@@ -8,6 +8,8 @@
 
 #import "PGNScreensaverView.h"
 
+#import "NSColor+BackGroundColor.h"
+
 @implementation PGNScreensaverView
 
 - (instancetype)initWithFrame:(NSRect)frame isPreview:(BOOL)isPreview
@@ -34,6 +36,10 @@
 - (void)drawRect:(NSRect)rect
 {
     [super drawRect:rect];
+
+    [NSColor.backgroundColor set];
+    NSRectFill(self.frame);
+
     [board drawInRect:self.frame];
     drawChessBoard = NO;
 }
