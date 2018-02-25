@@ -72,45 +72,9 @@
                 [NSColor.chessBoardBrownLightColor set];
             }
             NSRectFill(r);
-            switch (position[y][x]) {
-                case 'K':
-                    [whiteKing drawInRect:r];
-                    break;
-                case 'k':
-                    [blackKing drawInRect:r];
-                    break;
-                case 'Q':
-                    [whiteQueen drawInRect:r];
-                    break;
-                case 'q':
-                    [blackQueen drawInRect:r];
-                    break;
-                case 'R':
-                    [whiteRook drawInRect:r];
-                    break;
-                case 'r':
-                    [blackRook drawInRect:r];
-                    break;
-                case 'B':
-                    [whiteBishop drawInRect:r];
-                    break;
-                case 'b':
-                    [blackBishop drawInRect:r];
-                    break;
-                case 'N':
-                    [whiteKnight drawInRect:r];
-                    break;
-                case 'n':
-                    [blackKnight drawInRect:r];
-                    break;
-                case 'P':
-                    [whitePawn drawInRect:r];
-                    break;
-                case 'p':
-                    [blackPawn drawInRect:r];
-                    break;
-                default:
-                    break;
+            NSImage *piece = chessPieces[@(position[y][x])];
+            if ([piece isKindOfClass:NSImage.class]) {
+                [piece drawInRect:r];
             }
         }
     }
@@ -130,36 +94,46 @@
 
 - (void)setInitialPosition
 {
-    strcpy(position[7], "rnbqkbnr");
-    strcpy(position[6], "pppppppp");
-    strcpy(position[5], "        ");
-    strcpy(position[4], "        ");
-    strcpy(position[3], "        ");
-    strcpy(position[2], "        ");
-    strcpy(position[1], "PPPPPPPP");
-    strcpy(position[0], "RNBQKBNR");
+    position[0][0] = position[0][7] = WHITE_ROOK;
+    position[0][1] = position[0][6] = WHITE_KNIGHT;
+    position[0][2] = position[0][5] = WHITE_BISHOP;
+    position[0][3] = WHITE_QUEEN;
+    position[0][4] = WHITE_KING;
+    position[7][0] = position[7][7] = BLACK_ROOK;
+    position[7][1] = position[7][6] = BLACK_KNIGHT;
+    position[7][2] = position[7][5] = BLACK_BISHOP;
+    position[7][3] = BLACK_QUEEN;
+    position[7][4] = BLACK_KING;
+    for (int i = 1; i < 7; ++i) {
+        for (int j = 0; j < 8; ++j) {
+            ChessPieceType toAssign = NONE;
+            if (i == 1) {
+                toAssign = WHITE_PAWN;
+            } else if (i == 6) {
+                toAssign = BLACK_PAWN;
+            }
+            position[i][j] = toAssign;
+        }
+    }
 }
 
 - (void)loadImages
 {
     NSBundle *b = [NSBundle bundleForClass:[self class]];
-    whiteKing = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_klt45" ofType:@"pdf"]];
-    blackKing = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_kdt45" ofType:@"pdf"]];
-
-    whiteQueen = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_qlt45" ofType:@"pdf"]];
-    blackQueen = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_qdt45" ofType:@"pdf"]];
-
-    whiteRook = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_rlt45" ofType:@"pdf"]];
-    blackRook = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_rdt45" ofType:@"pdf"]];
-
-    whiteBishop = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_blt45" ofType:@"pdf"]];
-    blackBishop = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_bdt45" ofType:@"pdf"]];
-
-    whiteKnight = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_nlt45" ofType:@"pdf"]];
-    blackKnight = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_ndt45" ofType:@"pdf"]];
-
-    whitePawn = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_plt45" ofType:@"pdf"]];
-    blackPawn = [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_pdt45" ofType:@"pdf"]];
+    chessPieces = @{
+        @(WHITE_KING): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_klt45" ofType:@"pdf"]],
+        @(BLACK_KING): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_kdt45" ofType:@"pdf"]],
+        @(WHITE_QUEEN): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_qlt45" ofType:@"pdf"]],
+        @(BLACK_QUEEN): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_qdt45" ofType:@"pdf"]],
+        @(WHITE_ROOK): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_rlt45" ofType:@"pdf"]],
+        @(BLACK_ROOK): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_rdt45" ofType:@"pdf"]],
+        @(WHITE_BISHOP): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_blt45" ofType:@"pdf"]],
+        @(BLACK_BISHOP): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_bdt45" ofType:@"pdf"]],
+        @(WHITE_KNIGHT): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_nlt45" ofType:@"pdf"]],
+        @(BLACK_KNIGHT): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_ndt45" ofType:@"pdf"]],
+        @(WHITE_PAWN): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_plt45" ofType:@"pdf"]],
+        @(BLACK_PAWN): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_pdt45" ofType:@"pdf"]],
+    };
 }
 
 @end
