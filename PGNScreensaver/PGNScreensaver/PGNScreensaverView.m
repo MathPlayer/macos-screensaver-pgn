@@ -17,6 +17,7 @@
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
+        drawChessBoard = YES;
     }
     return self;
 }
@@ -34,12 +35,14 @@
 - (void)drawRect:(NSRect)rect
 {
     [super drawRect:rect];
+    [self drawChessBoard];
 }
 
 - (void)animateOneFrame
 {
-    // TODO: check if a call for this method is needed for each frame
-    [self drawChessBoard];
+    if (drawChessBoard) {
+        [self setNeedsDisplay:YES];
+    }
 }
 
 - (void)drawChessBoard
@@ -69,6 +72,8 @@
             NSRectFill(r);
         }
     }
+
+    drawChessBoard = NO;
 }
 
 - (BOOL)hasConfigureSheet

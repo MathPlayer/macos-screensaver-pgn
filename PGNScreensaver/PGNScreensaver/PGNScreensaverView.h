@@ -8,7 +8,9 @@
 
 #import <ScreenSaver/ScreenSaver.h>
 
-@interface PGNScreensaverView : ScreenSaverView
+@interface PGNScreensaverView : ScreenSaverView {
+    BOOL drawChessBoard;
+}
 
 - (void)drawChessBoard;
 
