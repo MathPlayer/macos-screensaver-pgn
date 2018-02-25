@@ -38,6 +38,12 @@
 
 - (void)animateOneFrame
 {
+    // TODO: check if a call for this method is needed for each frame
+    [self drawChessBoard];
+}
+
+- (void)drawChessBoard
+{
     CGFloat minDimension = self.frame.size.width;
     if (minDimension > self.frame.size.height) {
         minDimension = self.frame.size.height;

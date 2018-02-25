@@ -10,4 +10,6 @@
 
 @interface PGNScreensaverView : ScreenSaverView
 
+- (void)drawChessBoard;
+
 @end
