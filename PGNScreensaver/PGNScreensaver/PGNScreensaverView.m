@@ -18,7 +18,6 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
         _board = [[ChessBoard alloc] init];
-        drawChessBoard = YES;
     }
     return self;
 }
@@ -41,12 +40,11 @@
     NSRectFill(self.frame);
 
     [_board drawInRect:self.frame];
-    drawChessBoard = NO;
 }
 
 - (void)animateOneFrame
 {
-    if (drawChessBoard) {
+    if ([_board needsDisplay]) {
         [self setNeedsDisplay:YES];
     }
 }

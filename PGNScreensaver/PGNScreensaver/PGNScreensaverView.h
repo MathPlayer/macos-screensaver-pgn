@@ -12,7 +12,6 @@
 
 @interface PGNScreensaverView : ScreenSaverView {
     ChessBoard *_board;
-    BOOL drawChessBoard;
 
     IBOutlet NSPanel *_optionsSheet;
 }

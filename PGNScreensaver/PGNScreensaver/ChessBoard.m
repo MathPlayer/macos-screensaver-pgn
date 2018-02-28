@@ -20,6 +20,7 @@
     if (self) {
         [self loadImages];
         [self setInitialPosition];
+        _needsDisplay = YES;
     }
     return self;
 }
@@ -98,6 +99,8 @@
             }
         }
     }
+
+    _needsDisplay = NO;
 }
 
 @end

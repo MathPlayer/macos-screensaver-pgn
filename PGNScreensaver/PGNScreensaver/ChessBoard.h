@@ -44,6 +44,8 @@ typedef enum : NSUInteger {
     NSDictionary<NSNumber *, NSImage *> *_images;
 }
 
+@property (readonly) BOOL needsDisplay;
+
 - (void)setInitialPosition;
 - (void)loadImages;
 - (void)drawInRect:(CGRect)rect;
