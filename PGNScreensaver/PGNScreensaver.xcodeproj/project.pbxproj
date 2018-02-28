@@ -34,6 +34,7 @@
 		D8079E192042C71100D683F4 /* get_images.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_images.sh; sourceTree = "<group>"; };
 		D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+ChessBoardColor.h"; sourceTree = "<group>"; };
 		D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ChessBoardColor.m"; sourceTree = "<group>"; };
+		D871491C20470DEC008C0D3F /* ChessCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessCommonDefines.h; sourceTree = "<group>"; };
 		D8D31A332042F831005A44AF /* Chess_qlt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_qlt45.pdf; sourceTree = "<group>"; };
 		D8D31A342042F831005A44AF /* Chess_klt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_klt45.pdf; sourceTree = "<group>"; };
 		D8D31A352042F831005A44AF /* Chess_bdt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_bdt45.pdf; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 				D8FDAA4420402A3900B84225 /* Info.plist */,
 				D8D31A4D204315E9005A44AF /* ChessBoard.h */,
 				D8D31A4E204315E9005A44AF /* ChessBoard.m */,
+				D871491C20470DEC008C0D3F /* ChessCommonDefines.h */,
 			);
 			path = PGNScreensaver;
 			sourceTree = "<group>";
