@@ -6,7 +6,7 @@
 //  Copyright © 2018 MathPlayer. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
+#import <AppKit/AppKit.h>
 
 @interface NSColor (ChessBoardColor)
 

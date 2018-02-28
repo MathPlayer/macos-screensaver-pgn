@@ -8,9 +8,9 @@
 
 #import "ChessBoard.h"
 
-#import "NSColor+ChessBoardColor.h"
+#import <AppKit/AppKit.h>
 
-#import <AppKit/NSImage.h>
+#import "NSColor+ChessBoardColor.h"
 
 @implementation ChessBoard
 
