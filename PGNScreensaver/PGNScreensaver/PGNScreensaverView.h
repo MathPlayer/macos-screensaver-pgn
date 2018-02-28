@@ -11,10 +11,10 @@
 #import <ScreenSaver/ScreenSaver.h>
 
 @interface PGNScreensaverView : ScreenSaverView {
-    ChessBoard *board;
+    ChessBoard *_board;
     BOOL drawChessBoard;
 
-    IBOutlet NSPanel *optionsSheet;
+    IBOutlet NSPanel *_optionsSheet;
 }
 
 - (IBAction)cancelClick:(id)sender;

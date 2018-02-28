@@ -38,10 +38,10 @@ typedef enum : NSUInteger {
 } ChessPieceType;
 
 @interface ChessBoard : NSObject {
-    NSUInteger position[8][8];
+    NSUInteger _board[8][8];
 
     // Use values from ChessPieceType enum as keys
-    NSDictionary<NSNumber *, NSImage *> *chessPieces;
+    NSDictionary<NSNumber *, NSImage *> *_images;
 }
 
 - (void)setInitialPosition;

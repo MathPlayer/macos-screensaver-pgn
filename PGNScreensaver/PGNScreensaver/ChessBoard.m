@@ -26,16 +26,16 @@
 
 - (void)setInitialPosition
 {
-    position[0][0] = position[0][7] = WHITE_ROOK;
-    position[0][1] = position[0][6] = WHITE_KNIGHT;
-    position[0][2] = position[0][5] = WHITE_BISHOP;
-    position[0][3] = WHITE_QUEEN;
-    position[0][4] = WHITE_KING;
-    position[7][0] = position[7][7] = BLACK_ROOK;
-    position[7][1] = position[7][6] = BLACK_KNIGHT;
-    position[7][2] = position[7][5] = BLACK_BISHOP;
-    position[7][3] = BLACK_QUEEN;
-    position[7][4] = BLACK_KING;
+    _board[0][0] = _board[0][7] = WHITE_ROOK;
+    _board[0][1] = _board[0][6] = WHITE_KNIGHT;
+    _board[0][2] = _board[0][5] = WHITE_BISHOP;
+    _board[0][3] = WHITE_QUEEN;
+    _board[0][4] = WHITE_KING;
+    _board[7][0] = _board[7][7] = BLACK_ROOK;
+    _board[7][1] = _board[7][6] = BLACK_KNIGHT;
+    _board[7][2] = _board[7][5] = BLACK_BISHOP;
+    _board[7][3] = BLACK_QUEEN;
+    _board[7][4] = BLACK_KING;
     for (int i = 1; i < 7; ++i) {
         for (int j = 0; j < 8; ++j) {
             ChessPieceType toAssign = NONE;
@@ -44,7 +44,7 @@
             } else if (i == 6) {
                 toAssign = BLACK_PAWN;
             }
-            position[i][j] = toAssign;
+            _board[i][j] = toAssign;
         }
     }
 }
@@ -52,7 +52,7 @@
 - (void)loadImages
 {
     NSBundle *b = [NSBundle bundleForClass:[self class]];
-    chessPieces = @{@(WHITE_KING): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_klt45" ofType:@"pdf"]],
+    _images = @{@(WHITE_KING): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_klt45" ofType:@"pdf"]],
                     @(BLACK_KING): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_kdt45" ofType:@"pdf"]],
                     @(WHITE_QUEEN): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_qlt45" ofType:@"pdf"]],
                     @(BLACK_QUEEN): [[NSImage alloc] initWithContentsOfFile:[b pathForResource:@"Chess_qdt45" ofType:@"pdf"]],
@@ -92,7 +92,7 @@
                 [NSColor.chessBoardBrownLightColor set];
             }
             NSRectFill(r);
-            NSImage *piece = chessPieces[@(position[y][x])];
+            NSImage *piece = _images[@(_board[y][x])];
             if ([piece isKindOfClass:NSImage.class]) {
                 [piece drawInRect:r];
             }

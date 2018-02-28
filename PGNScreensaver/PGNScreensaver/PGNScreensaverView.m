@@ -17,7 +17,7 @@
     self = [super initWithFrame:frame isPreview:isPreview];
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
-        board = [[ChessBoard alloc] init];
+        _board = [[ChessBoard alloc] init];
         drawChessBoard = YES;
     }
     return self;
@@ -40,7 +40,7 @@
     [NSColor.backgroundColor set];
     NSRectFill(self.frame);
 
-    [board drawInRect:self.frame];
+    [_board drawInRect:self.frame];
     drawChessBoard = NO;
 }
 
@@ -58,22 +58,22 @@
 
 - (NSWindow*)configureSheet
 {
-    if (![optionsSheet isKindOfClass:NSPanel.class]) {
+    if (![_optionsSheet isKindOfClass:NSPanel.class]) {
         [[NSBundle bundleForClass:self.class] loadNibNamed:@"OptionsSheet"
                                                      owner:self
                                            topLevelObjects:nil];
     }
     
-    return optionsSheet;
+    return _optionsSheet;
 }
 
 - (IBAction)cancelClick:(id)sender
 {
-    [[NSApplication sharedApplication] endSheet:optionsSheet];
+    [[NSApplication sharedApplication] endSheet:_optionsSheet];
 }
 
 - (IBAction)okClick:(id)sender
 {
-    [[NSApplication sharedApplication] endSheet:optionsSheet];
+    [[NSApplication sharedApplication] endSheet:_optionsSheet];
 }
 @end
