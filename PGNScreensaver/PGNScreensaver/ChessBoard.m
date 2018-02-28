@@ -75,13 +75,13 @@
     CGRect board = CGRectInset(rect,
                                (CGRectGetWidth(rect) - boardSize) / 2,
                                (CGRectGetHeight(rect) - boardSize) / 2);
-    CGFloat sqSize = boardSize / 8;
+    CGFloat squareSize = boardSize / 8;
     for (int y = 0; y < 8; ++y) {
         for (int x = 0; x < 8; ++x) {
-            NSRect r = NSMakeRect(CGRectGetMinX(board) + x * sqSize,
-                                  CGRectGetMinY(board) + y * sqSize,
-                                  sqSize,
-                                  sqSize);
+            NSRect r = NSMakeRect(CGRectGetMinX(board) + x * squareSize,
+                                  CGRectGetMinY(board) + y * squareSize,
+                                  squareSize,
+                                  squareSize);
             if ((x + y) % 2) {
                 [NSColor.chessBoardBrownDarkColor set];
             } else {
