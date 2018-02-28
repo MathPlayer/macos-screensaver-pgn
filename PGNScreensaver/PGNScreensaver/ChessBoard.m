@@ -70,21 +70,16 @@
 
 - (void)drawInRect:(CGRect)rect
 {
-    CGFloat minDimension = rect.size.width;
-    if (minDimension > rect.size.height) {
-        minDimension = rect.size.height;
-    }
-    // Use only 3/4 of the minDimension
-    minDimension *= 0.75;
-
-    CGPoint bottomLeft = CGPointMake(rect.size.width / 2 - minDimension / 2,
-                                     rect.size.height / 2 - minDimension / 2);
-    CGFloat sqSize = minDimension / 8;
-
+    // Use only 3/4 of the actual size
+    CGFloat boardSize = 0.75 * MIN(CGRectGetWidth(rect), CGRectGetHeight(rect));
+    CGRect board = CGRectInset(rect,
+                               (CGRectGetWidth(rect) - boardSize) / 2,
+                               (CGRectGetHeight(rect) - boardSize) / 2);
+    CGFloat sqSize = boardSize / 8;
     for (int y = 0; y < 8; ++y) {
         for (int x = 0; x < 8; ++x) {
-            NSRect r = NSMakeRect(bottomLeft.x + x * sqSize,
-                                  bottomLeft.y + y * sqSize,
+            NSRect r = NSMakeRect(CGRectGetMinX(board) + x * sqSize,
+                                  CGRectGetMinY(board) + y * sqSize,
                                   sqSize,
                                   sqSize);
             if ((x + y) % 2) {
