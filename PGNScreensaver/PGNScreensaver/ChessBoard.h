@@ -15,12 +15,21 @@
 
     // Use values from ChessPieceType enum as keys
     NSDictionary<NSNumber *, NSImage *> *_images;
+
+    ChessPieceType _mpType;
+    NSUInteger _mpTotalSteps;
+    NSUInteger _mpStep;
+    NSInteger _mpFromX;
+    NSInteger _mpFromY;
+    NSInteger _mpToX;
+    NSInteger _mpToY;
 }
 
 @property (readonly) BOOL needsDisplay;
 
 - (void)setInitialPosition;
 - (void)loadImages;
-- (void)drawInRect:(CGRect)rect;
+- (void)drawInRect:(NSRect)rect;
+- (void)startMove;
 
 @end

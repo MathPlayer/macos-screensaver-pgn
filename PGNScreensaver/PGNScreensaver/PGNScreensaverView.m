@@ -18,6 +18,7 @@
     if (self) {
         [self setAnimationTimeInterval:1/30.0];
         _board = [[ChessBoard alloc] init];
+        _idleFrameCounter = 0;
     }
     return self;
 }
@@ -46,6 +47,11 @@
 {
     if ([_board needsDisplay]) {
         [self setNeedsDisplay:YES];
+    } else if (_idleFrameCounter >= 60){
+        [_board startMove];
+        _idleFrameCounter = 0;
+    } else {
+        _idleFrameCounter++;
     }
 }
 

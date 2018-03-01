@@ -21,6 +21,8 @@
         [self loadImages];
         [self setInitialPosition];
         _needsDisplay = YES;
+        _mpType = NONE;
+        _mpTotalSteps = 60;
     }
     return self;
 }
@@ -68,34 +70,82 @@
                 };
 }
 
-- (void)drawInRect:(CGRect)rect
+- (void)drawInRect:(NSRect)rect
 {
     // Use only 3/4 of the actual size
-    CGFloat boardSize = 0.75 * MIN(CGRectGetWidth(rect), CGRectGetHeight(rect));
-    CGRect board = CGRectInset(rect,
+    CGFloat boardSize = 0.75 * MIN(NSWidth(rect), NSHeight(rect));
+    NSRect board = NSInsetRect(rect,
                                (CGRectGetWidth(rect) - boardSize) / 2,
                                (CGRectGetHeight(rect) - boardSize) / 2);
     CGFloat squareSize = boardSize / 8;
+    NSImage *piece;
+    NSRect pieceReferenceRect = NSMakeRect(NSMinX(board), NSMinY(board), squareSize, squareSize);
+    NSRect pieceRect;
     for (int y = 0; y < 8; ++y) {
         for (int x = 0; x < 8; ++x) {
-            NSRect r = NSMakeRect(CGRectGetMinX(board) + x * squareSize,
-                                  CGRectGetMinY(board) + y * squareSize,
-                                  squareSize,
-                                  squareSize);
             if ((x + y) % 2) {
                 [NSColor.chessBoardBrownDarkColor set];
             } else {
                 [NSColor.chessBoardBrownLightColor set];
             }
-            NSRectFill(r);
-            NSImage *piece = _images[@(_board[y][x])];
+            pieceRect = NSOffsetRect(pieceReferenceRect, x * squareSize, y * squareSize);
+            NSRectFill(pieceRect);
+            piece = _images[@(_board[y][x])];
             if ([piece isKindOfClass:NSImage.class]) {
-                [piece drawInRect:r];
+                [piece drawInRect:pieceRect];
             }
         }
     }
 
-    _needsDisplay = NO;
+    if (_mpType == NONE) {
+        _needsDisplay = NO;
+    } else {
+        if (_mpStep < _mpTotalSteps) {
+            _mpStep++;
+        }
+
+        pieceRect = NSOffsetRect(pieceReferenceRect,
+                                 squareSize * (_mpFromX +
+                                               (CGFloat)(_mpToX - _mpFromX) * _mpStep / _mpTotalSteps),
+                                 squareSize * (_mpFromY +
+                                               (CGFloat)(_mpToY - _mpFromY) * _mpStep / _mpTotalSteps));
+        [NSColor.redColor set];
+        NSRectFill(pieceRect);
+        [_images[@(_mpType)] drawInRect:pieceRect];
+
+        if (_mpStep == _mpTotalSteps) {
+            _board[_mpToY][_mpToX] = _mpType;
+            _mpType = NONE;
+        }
+    }
+}
+
+- (void)startMove
+{
+    // Get a non-empty square
+    while (true) {
+        _mpFromX = rand() % 8;
+        _mpFromY = rand() % 8;
+        if (_board[_mpFromY][_mpFromX] != NONE) {
+            break;
+        }
+    }
+
+    // Get any other square
+    while (true) {
+        _mpToX = rand() % 8;
+        _mpToY = rand() % 8;
+        if (_mpToX != _mpFromX ||
+            _mpToY != _mpFromY) {
+            break;
+        }
+    }
+
+    _mpStep = 0;
+    _mpType = _board[_mpFromX][_mpFromX];
+    _board[_mpFromX][_mpFromX] = NONE;
+
+    _needsDisplay = YES;
 }
 
 @end

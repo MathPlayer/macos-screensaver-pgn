@@ -12,7 +12,7 @@
 
 @interface PGNScreensaverView : ScreenSaverView {
     ChessBoard *_board;
-
+    NSUInteger _idleFrameCounter;
     IBOutlet NSPanel *_optionsSheet;
 }
 
