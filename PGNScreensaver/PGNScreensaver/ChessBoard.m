@@ -115,15 +115,12 @@
 
 - (void)startMove
 {
-    _movingPiece = [MovingPiece pieceOfType:WHITE_PAWN movingFromX:1 andY:1 toX:3 andY:3];
-    _board[3][3] = NONE;
-    _board[1][1] = NONE;
+    _movingPiece = [MovingPiece pieceWithType:WHITE_PAWN andMove:@"e2e4"];
     _needsDisplay = YES;
 }
 
 - (void)finishMove
 {
-    _board[3][3] = WHITE_PAWN;
     _movingPiece = nil;
 }
 

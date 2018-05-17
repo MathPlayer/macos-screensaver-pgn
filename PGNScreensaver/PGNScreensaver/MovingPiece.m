@@ -10,27 +10,18 @@
 
 @implementation MovingPiece
 
-+(instancetype)pieceOfType:(ChessPieceType)type
-               movingFromX:(NSInteger)fromX
-                      andY:(NSInteger)fromY
-                       toX:(NSInteger)toX
-                      andY:(NSInteger)toY
++(instancetype)pieceWithType:(ChessPieceType)type
+                     andMove:(NSString *)move;
 {
-    return [[self alloc] initWithPieceType:type movingFromX:fromX andY:fromY toX:toX andY:toY];
+    return [[self alloc] initWithPieceType:type andMove:move];
 }
 
 - (instancetype)initWithPieceType:(ChessPieceType)type
-                      movingFromX:(NSInteger)fromX
-                             andY:(NSInteger)fromY
-                              toX:(NSInteger)toX
-                             andY:(NSInteger)toY
+                          andMove:(NSString *)move
 {
     self = [super init];
     if (self) {
-        _fromX = fromX;
-        _toX = toX;
-        _fromY = fromY;
-        _toY = toY;
+        _move = [Move moveWithString:move];
         _type = type;
         _stepCount = 0;
         _stepTotal = 10;
@@ -41,12 +32,12 @@
 - (NSRect)moveStepWithOriginSquare:(NSRect)originRect andSquareSize:(CGFloat)squareSize
 {
     if (_stepCount >= _stepTotal) {
-        return NSOffsetRect(originRect, squareSize * _toX, squareSize * _toY);
+        return NSOffsetRect(originRect, squareSize * _move.toY, squareSize * _move.toX);
     }
     _stepCount++;
     return NSOffsetRect(originRect,
-                        squareSize * (_fromX + (CGFloat)(_toX - _fromX) * _stepCount / _stepTotal),
-                        squareSize * (_fromY + (CGFloat)(_toY - _fromY) * _stepCount / _stepTotal));
+                        squareSize * (_move.fromY + (CGFloat)(_move.toY - _move.fromY) * _stepCount / _stepTotal),
+                        squareSize * (_move.fromX + (CGFloat)(_move.toX - _move.fromX) * _stepCount / _stepTotal));
 }
 
 - (BOOL)stopped

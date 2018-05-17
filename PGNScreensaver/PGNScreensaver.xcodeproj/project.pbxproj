@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		D809E8A820ACFDA1004305EF /* MovingPiece.h in Headers */ = {isa = PBXBuildFile; fileRef = D809E8A620ACFDA1004305EF /* MovingPiece.h */; };
 		D809E8A920ACFDA1004305EF /* MovingPiece.m in Sources */ = {isa = PBXBuildFile; fileRef = D809E8A720ACFDA1004305EF /* MovingPiece.m */; };
+		D809E8B620AD19A6004305EF /* Move.h in Headers */ = {isa = PBXBuildFile; fileRef = D809E8B420AD19A6004305EF /* Move.h */; };
+		D809E8B720AD19A6004305EF /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = D809E8B520AD19A6004305EF /* Move.m */; };
 		D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */; };
 		D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */; };
 		D8D31A3F2042F832005A44AF /* Chess_qlt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A332042F831005A44AF /* Chess_qlt45.pdf */; };
@@ -36,6 +38,8 @@
 		D8079E192042C71100D683F4 /* get_images.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = get_images.sh; sourceTree = "<group>"; };
 		D809E8A620ACFDA1004305EF /* MovingPiece.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovingPiece.h; sourceTree = "<group>"; };
 		D809E8A720ACFDA1004305EF /* MovingPiece.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovingPiece.m; sourceTree = "<group>"; };
+		D809E8B420AD19A6004305EF /* Move.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Move.h; sourceTree = "<group>"; };
+		D809E8B520AD19A6004305EF /* Move.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Move.m; sourceTree = "<group>"; };
 		D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+ChessBoardColor.h"; sourceTree = "<group>"; };
 		D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ChessBoardColor.m"; sourceTree = "<group>"; };
 		D871491C20470DEC008C0D3F /* ChessCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessCommonDefines.h; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 				D871491C20470DEC008C0D3F /* ChessCommonDefines.h */,
 				D809E8A620ACFDA1004305EF /* MovingPiece.h */,
 				D809E8A720ACFDA1004305EF /* MovingPiece.m */,
+				D809E8B420AD19A6004305EF /* Move.h */,
+				D809E8B520AD19A6004305EF /* Move.m */,
 			);
 			path = PGNScreensaver;
 			sourceTree = "<group>";
@@ -153,6 +159,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D809E8B620AD19A6004305EF /* Move.h in Headers */,
 				D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */,
 				D809E8A820ACFDA1004305EF /* MovingPiece.h in Headers */,
 				D8D31A5420431BC2005A44AF /* NSColor+BackGroundColor.h in Headers */,
@@ -262,6 +269,7 @@
 				D8FDAA4320402A3900B84225 /* PGNScreensaverView.m in Sources */,
 				D809E8A920ACFDA1004305EF /* MovingPiece.m in Sources */,
 				D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */,
+				D809E8B720AD19A6004305EF /* Move.m in Sources */,
 				D8D31A5520431BC2005A44AF /* NSColor+BackGroundColor.m in Sources */,
 				D8D31A50204315E9005A44AF /* ChessBoard.m in Sources */,
 			);

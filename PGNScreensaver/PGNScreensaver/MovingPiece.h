@@ -9,30 +9,21 @@
 #import <Foundation/Foundation.h>
 
 #import "ChessCommonDefines.h"
+#import "Move.h"
 
 @interface MovingPiece : NSObject {
-    NSInteger _fromX;
-    NSInteger _fromY;
-    NSInteger _toX;
-    NSInteger _toY;
-
     NSUInteger _stepCount;
     NSUInteger _stepTotal;
 }
 
-@property (readonly, nonatomic) ChessPieceType type;
+@property (readonly) ChessPieceType type;
+@property (readonly) Move *move;
 
-+ (instancetype)pieceOfType:(ChessPieceType)aType
-                movingFromX:(NSInteger)fromX
-                       andY:(NSInteger)fromY
-                        toX:(NSInteger)toX
-                       andY:(NSInteger)toY;
++(instancetype)pieceWithType:(ChessPieceType)type
+                     andMove:(NSString *)move;
 
-- (instancetype)initWithPieceType:(ChessPieceType)aType
-                      movingFromX:(NSInteger)fromX
-                             andY:(NSInteger)fromY
-                              toX:(NSInteger)toX
-                             andY:(NSInteger)toY;
+- (instancetype)initWithPieceType:(ChessPieceType)type
+                          andMove:(NSString *)move;
 
 - (NSRect)moveStepWithOriginSquare:(NSRect)originRect
                      andSquareSize:(CGFloat)squareSize;
