@@ -21,8 +21,7 @@
         [self loadImages];
         [self setInitialPosition];
         _needsDisplay = YES;
-        _mpType = NONE;
-        _mpTotalSteps = 60;
+        _movingPiece = nil;
     }
     return self;
 }
@@ -78,9 +77,10 @@
                                (CGRectGetWidth(rect) - boardSize) / 2,
                                (CGRectGetHeight(rect) - boardSize) / 2);
     CGFloat squareSize = boardSize / 8;
-    NSImage *piece;
-    NSRect pieceReferenceRect = NSMakeRect(NSMinX(board), NSMinY(board), squareSize, squareSize);
+    NSRect pieceOriginRect = NSMakeRect(NSMinX(board), NSMinY(board), squareSize, squareSize);
     NSRect pieceRect;
+
+    // Draw board and non-moving pieces
     for (int y = 0; y < 8; ++y) {
         for (int x = 0; x < 8; ++x) {
             if ((x + y) % 2) {
@@ -88,64 +88,43 @@
             } else {
                 [NSColor.chessBoardBrownLightColor set];
             }
-            pieceRect = NSOffsetRect(pieceReferenceRect, x * squareSize, y * squareSize);
+            pieceRect = NSOffsetRect(pieceOriginRect, x * squareSize, y * squareSize);
             NSRectFill(pieceRect);
-            piece = _images[@(_board[y][x])];
-            if ([piece isKindOfClass:NSImage.class]) {
-                [piece drawInRect:pieceRect];
-            }
+            [_images[@(_board[y][x])] drawInRect:pieceRect];
         }
     }
 
-    if (_mpType == NONE) {
+    // Draw moving piece
+    if (_movingPiece == nil) {
         _needsDisplay = NO;
     } else {
-        if (_mpStep < _mpTotalSteps) {
-            _mpStep++;
-        }
+        pieceRect = [_movingPiece moveStepWithOriginSquare:pieceOriginRect
+                                             andSquareSize:squareSize];
 
-        pieceRect = NSOffsetRect(pieceReferenceRect,
-                                 squareSize * (_mpFromX +
-                                               (CGFloat)(_mpToX - _mpFromX) * _mpStep / _mpTotalSteps),
-                                 squareSize * (_mpFromY +
-                                               (CGFloat)(_mpToY - _mpFromY) * _mpStep / _mpTotalSteps));
+        // TODO: remove red color
         [NSColor.redColor set];
         NSRectFill(pieceRect);
-        [_images[@(_mpType)] drawInRect:pieceRect];
+        [_images[@(_movingPiece.type)] drawInRect:pieceRect];
 
-        if (_mpStep == _mpTotalSteps) {
-            _board[_mpToY][_mpToX] = _mpType;
-            _mpType = NONE;
+        if ([_movingPiece stopped]) {
+            [self finishMove];
         }
+        _needsDisplay = YES;
     }
 }
 
 - (void)startMove
 {
-    // Get a non-empty square
-    while (true) {
-        _mpFromX = rand() % 8;
-        _mpFromY = rand() % 8;
-        if (_board[_mpFromY][_mpFromX] != NONE) {
-            break;
-        }
-    }
-
-    // Get any other square
-    while (true) {
-        _mpToX = rand() % 8;
-        _mpToY = rand() % 8;
-        if (_mpToX != _mpFromX ||
-            _mpToY != _mpFromY) {
-            break;
-        }
-    }
-
-    _mpStep = 0;
-    _mpType = _board[_mpFromX][_mpFromX];
-    _board[_mpFromX][_mpFromX] = NONE;
-
+    _movingPiece = [MovingPiece pieceOfType:WHITE_PAWN movingFromX:1 andY:1 toX:3 andY:3];
+    _board[3][3] = NONE;
+    _board[1][1] = NONE;
     _needsDisplay = YES;
+}
+
+- (void)finishMove
+{
+    _board[3][3] = WHITE_PAWN;
+    _movingPiece = nil;
 }
 
 @end

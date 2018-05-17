@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "ChessCommonDefines.h"
+#import "MovingPiece.h"
 
 @interface ChessBoard : NSObject {
     ChessPieceType _board[8][8];
@@ -16,13 +17,7 @@
     // Use values from ChessPieceType enum as keys
     NSDictionary<NSNumber *, NSImage *> *_images;
 
-    ChessPieceType _mpType;
-    NSUInteger _mpTotalSteps;
-    NSUInteger _mpStep;
-    NSInteger _mpFromX;
-    NSInteger _mpFromY;
-    NSInteger _mpToX;
-    NSInteger _mpToY;
+    MovingPiece *_movingPiece;
 }
 
 @property (readonly) BOOL needsDisplay;
