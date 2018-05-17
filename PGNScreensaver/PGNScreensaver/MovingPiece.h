@@ -19,11 +19,11 @@
 @property (readonly) ChessPieceType type;
 @property (readonly) Move *move;
 
-+(instancetype)pieceWithType:(ChessPieceType)type
-                     andMove:(NSString *)move;
++ (instancetype)pieceWithType:(ChessPieceType)type
+                      andMove:(Move *)move;
 
 - (instancetype)initWithPieceType:(ChessPieceType)type
-                          andMove:(NSString *)move;
+                          andMove:(Move *)move;
 
 - (NSRect)moveStepWithOriginSquare:(NSRect)originRect
                      andSquareSize:(CGFloat)squareSize;

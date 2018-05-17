@@ -11,17 +11,17 @@
 @implementation MovingPiece
 
 +(instancetype)pieceWithType:(ChessPieceType)type
-                     andMove:(NSString *)move;
+                     andMove:(Move *)move;
 {
     return [[self alloc] initWithPieceType:type andMove:move];
 }
 
 - (instancetype)initWithPieceType:(ChessPieceType)type
-                          andMove:(NSString *)move
+                          andMove:(Move *)move
 {
     self = [super init];
     if (self) {
-        _move = [Move moveWithString:move];
+        _move = move;
         _type = type;
         _stepCount = 0;
         _stepTotal = 10;

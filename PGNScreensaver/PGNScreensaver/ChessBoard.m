@@ -19,7 +19,7 @@
     self = [super init];
     if (self) {
         [self loadImages];
-        [self setInitialPosition];
+        [self loadGame];
         _needsDisplay = YES;
         _movingPiece = nil;
     }
@@ -69,6 +69,13 @@
                 };
 }
 
+- (void)loadGame
+{
+    _gameManager = [GameManager managerWithFile:@"dummy.pgn"];
+    _moveCount = 0;
+    [self setInitialPosition];
+}
+
 - (void)drawInRect:(NSRect)rect
 {
     // Use only 3/4 of the actual size
@@ -115,13 +122,22 @@
 
 - (void)startMove
 {
-    _movingPiece = [MovingPiece pieceWithType:WHITE_PAWN andMove:@"e2e4"];
+    @try {
+        Move *move = _gameManager.moves[_moveCount];
+        _movingPiece = [MovingPiece pieceWithType:_board[move.fromX][move.fromY] andMove:move];
+        _board[move.fromX][move.fromY] = NONE;
+    } @catch (NSException *exception) {
+        // TODO: game ended, load another game
+        [self loadGame];
+    }
     _needsDisplay = YES;
 }
 
 - (void)finishMove
 {
+    _board[_movingPiece.move.toX][_movingPiece.move.toY] = _movingPiece.type;
     _movingPiece = nil;
+    _moveCount++;
 }
 
 @end
