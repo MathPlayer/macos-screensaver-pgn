@@ -107,11 +107,12 @@
     } else {
         pieceRect = [_movingPiece moveStepWithOriginSquare:pieceOriginRect
                                              andSquareSize:squareSize];
-
-        // TODO: remove red color
+#ifdef DEBUG
+        // background useful for detecting problems with pieces not showing
         [NSColor.redColor set];
         NSRectFill(pieceRect);
-        [_images[@(_movingPiece.type)] drawInRect:pieceRect];
+#endif
+        [_images[@(_movingPiece.move.type)] drawInRect:pieceRect];
 
         if ([_movingPiece stopped]) {
             [self finishMove];
@@ -124,8 +125,8 @@
 {
     @try {
         Move *move = _gameManager.moves[_moveCount];
-        _movingPiece = [MovingPiece pieceWithType:_board[move.fromX][move.fromY] andMove:move];
-        _board[move.fromX][move.fromY] = NONE;
+        _movingPiece = [MovingPiece pieceWithType:_board[move.fromLine][move.fromColumn] andMove:move];
+        _board[move.fromLine][move.fromColumn] = NONE;
     } @catch (NSException *exception) {
         // TODO: game ended, load another game
         [self loadGame];
@@ -135,7 +136,11 @@
 
 - (void)finishMove
 {
-    _board[_movingPiece.move.toX][_movingPiece.move.toY] = _movingPiece.type;
+    _board[_movingPiece.move.toLine][_movingPiece.move.toColumn] = _movingPiece.move.transformed ? _movingPiece.move.transformed : _movingPiece.move.type;
+    if (_movingPiece.move.enPassant) {
+        Move *prevMove = _gameManager.moves[_moveCount - 1];
+        _board[prevMove.toLine][prevMove.toColumn] = NONE;
+    }
     _movingPiece = nil;
     _moveCount++;
 }

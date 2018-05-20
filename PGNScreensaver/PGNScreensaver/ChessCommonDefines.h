@@ -38,3 +38,27 @@ typedef enum : NSUInteger {
     BLACK_QUEEN = BLACK + QUEEN,
     BLACK_KING = BLACK + KING
 } ChessPieceType;
+
+typedef enum : unichar {
+    COLUMN_A = 'a',
+    COLUMN_B = 'b',
+    COLUMN_C = 'c',
+    COLUMN_D = 'd',
+    COLUMN_E = 'e',
+    COLUMN_F = 'f',
+    COLUMN_G = 'g',
+    COLUMN_H = 'h',
+    COLUMN_FIRST = COLUMN_A,
+    COLUMN_LAST = COLUMN_H
+} ChessColumn;
+
+typedef enum : unichar {
+    LINE_1 = '1',
+    LINE_2 = '2',
+    LINE_3 = '3',
+    LINE_4 = '4',
+    LINE_5 = '5',
+    LINE_6 = '6',
+    LINE_7 = '7',
+    LINE_8 = '8',
+} ChessLine;

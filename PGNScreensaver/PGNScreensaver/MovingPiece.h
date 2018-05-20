@@ -16,7 +16,6 @@
     NSUInteger _stepTotal;
 }
 
-@property (readonly) ChessPieceType type;
 @property (readonly) Move *move;
 
 + (instancetype)pieceWithType:(ChessPieceType)type

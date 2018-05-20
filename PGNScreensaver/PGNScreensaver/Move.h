@@ -12,13 +12,23 @@
 
 @interface Move : NSObject
 
-@property (readonly) NSInteger fromX;
-@property (readonly) NSInteger fromY;
-@property (readonly) NSInteger toX;
-@property (readonly) NSInteger toY;
+@property (readonly) ChessPieceType type;
+@property (readonly) NSInteger fromLine;
+@property (readonly) NSInteger fromColumn;
+@property (readonly) NSInteger toLine;
+@property (readonly) NSInteger toColumn;
 @property (readonly) ChessPieceType transformed;
+@property (readonly) BOOL enPassant;
 
-+ (instancetype)moveFromString:(NSString *)move;
-- (instancetype)initWithMoveString:(NSString *)move;
++ (instancetype)moveFromString:(NSString *)move
+                      andColor:(ChessPieceColor)color;
+
++ (instancetype)moveFromString:(NSString *)move
+                      andColor:(ChessPieceColor)color
+                   isEnPassant:(BOOL)flag;
+
+- (instancetype)initWithMoveString:(NSString *)move
+                          andColor:(ChessPieceColor)color
+                       isEnPassant:(BOOL)flag;
 
 @end

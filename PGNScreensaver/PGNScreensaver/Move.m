@@ -10,8 +10,6 @@
 
 @implementation Move
 
-static NSDictionary *_castlingMoves;
-static NSDictionary *_nonPawnPieces;
 static NSCharacterSet *_nonPawnLetters;
 
 + (void)initialize
@@ -20,11 +18,23 @@ static NSCharacterSet *_nonPawnLetters;
 }
 
 + (instancetype)moveFromString:(NSString *)move
+                      andColor:(ChessPieceColor)color
 {
-    return [[self alloc] initWithMoveString:move];
+    return [self moveFromString:move andColor:color isEnPassant:NO];
+}
+
++ (instancetype)moveFromString:(NSString *)move
+                      andColor:(ChessPieceColor)color
+                   isEnPassant:(BOOL)flag;
+{
+    return [[self alloc] initWithMoveString:move
+                                   andColor:color
+                                isEnPassant:flag];
 }
 
 - (instancetype)initWithMoveString:(NSString *)move
+                          andColor:(ChessPieceColor)color
+                       isEnPassant:(BOOL)flag
 {
     if (!move) {
         return nil;
@@ -36,37 +46,43 @@ static NSCharacterSet *_nonPawnLetters;
         NSUInteger coordIndex = 0;
         NSRange nonPawnRange = [move rangeOfCharacterFromSet:_nonPawnLetters];
         if (nonPawnRange.location != NSNotFound) {
+            ChessPieceType nonPawnType = NONE;
+            switch ([move characterAtIndex:nonPawnRange.location]) {
+                case 'B':
+                    nonPawnType = BISHOP;
+                    break;
+                case 'N':
+                    nonPawnType = KNIGHT;
+                    break;
+                case 'R':
+                    nonPawnType = ROOK;
+                    break;
+                case 'Q':
+                    nonPawnType = QUEEN;
+                    break;
+                case 'K':
+                    nonPawnType = KING;
+                    break;
+            }
+
             if (nonPawnRange.location != 0) {
-                // Transforming a pawn
-                switch ([move characterAtIndex:4]) {
-                    case 'B':
-                        _transformed = BISHOP;
-                        break;
-                    case 'N':
-                        _transformed = KNIGHT;
-                        break;
-                    case 'R':
-                        _transformed = ROOK;
-                        break;
-                    case 'Q':
-                        _transformed = QUEEN;
-                        break;
-                }
-                if ([move characterAtIndex:3] == '1') {
-                    _transformed += WHITE;
-                } else {
-                    _transformed += BLACK;
-                }
+                _transformed = nonPawnType + color;
+                _type = PAWN + color;
             } else {
                 // Moving a non-pawn piece, skip piece letter
                 coordIndex = 1;
+                _type = nonPawnType + color;
             }
+        } else {
+            _type = PAWN + color;
         }
 
-        _fromY = [move characterAtIndex:coordIndex] - 'a';
-        _fromX = [move characterAtIndex:coordIndex + 1] - '1';
-        _toY = [move characterAtIndex:coordIndex + 2] - 'a';
-        _toX = [move characterAtIndex:coordIndex + 3] - '1';
+        _fromColumn = [move characterAtIndex:coordIndex] - COLUMN_A;
+        _fromLine = [move characterAtIndex:coordIndex + 1] - LINE_1;
+        _toColumn = [move characterAtIndex:coordIndex + 2] - COLUMN_A;
+        _toLine = [move characterAtIndex:coordIndex + 3] - LINE_1;
+
+        _enPassant = flag;
     }
 
     return self;
