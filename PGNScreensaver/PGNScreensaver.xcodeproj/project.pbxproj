@@ -15,6 +15,7 @@
 		D809E8BB20AD520C004305EF /* GameManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D809E8B920AD520C004305EF /* GameManager.m */; };
 		D828551120406ACD00AAC80E /* NSColor+ChessBoardColor.h in Headers */ = {isa = PBXBuildFile; fileRef = D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */; };
 		D828551220406ACD00AAC80E /* NSColor+ChessBoardColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */; };
+		D8A8D20220B194BB00CA49B0 /* DefaultGame.txt in Resources */ = {isa = PBXBuildFile; fileRef = D8A8D20120B194BB00CA49B0 /* DefaultGame.txt */; };
 		D8D31A3F2042F832005A44AF /* Chess_qlt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A332042F831005A44AF /* Chess_qlt45.pdf */; };
 		D8D31A402042F832005A44AF /* Chess_klt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A342042F831005A44AF /* Chess_klt45.pdf */; };
 		D8D31A412042F832005A44AF /* Chess_bdt45.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8D31A352042F831005A44AF /* Chess_bdt45.pdf */; };
@@ -47,6 +48,7 @@
 		D828550F20406ACD00AAC80E /* NSColor+ChessBoardColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSColor+ChessBoardColor.h"; sourceTree = "<group>"; };
 		D828551020406ACD00AAC80E /* NSColor+ChessBoardColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSColor+ChessBoardColor.m"; sourceTree = "<group>"; };
 		D871491C20470DEC008C0D3F /* ChessCommonDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChessCommonDefines.h; sourceTree = "<group>"; };
+		D8A8D20120B194BB00CA49B0 /* DefaultGame.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DefaultGame.txt; sourceTree = "<group>"; };
 		D8D31A332042F831005A44AF /* Chess_qlt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_qlt45.pdf; sourceTree = "<group>"; };
 		D8D31A342042F831005A44AF /* Chess_klt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_klt45.pdf; sourceTree = "<group>"; };
 		D8D31A352042F831005A44AF /* Chess_bdt45.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Chess_bdt45.pdf; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				D8D31A5E20431EDA005A44AF /* OptionsSheet.xib */,
 				D8D31A5720431D1C005A44AF /* Pieces */,
+				D8A8D20120B194BB00CA49B0 /* DefaultGame.txt */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				D8D31A4A2042F832005A44AF /* Chess_rlt45.pdf in Resources */,
 				D8D31A492042F832005A44AF /* Chess_ndt45.pdf in Resources */,
 				D8D31A412042F832005A44AF /* Chess_bdt45.pdf in Resources */,
+				D8A8D20220B194BB00CA49B0 /* DefaultGame.txt in Resources */,
 				D8D31A452042F832005A44AF /* Chess_kdt45.pdf in Resources */,
 				D8D31A482042F832005A44AF /* Chess_rdt45.pdf in Resources */,
 				D8D31A432042F832005A44AF /* Chess_qdt45.pdf in Resources */,
