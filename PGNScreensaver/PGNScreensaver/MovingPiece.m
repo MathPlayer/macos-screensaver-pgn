@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         _move = move;
-        _type = type;
+        _type = move.transformed != NONE ? move.transformed : type;
         _stepCount = 0;
         _stepTotal = 10;
     }

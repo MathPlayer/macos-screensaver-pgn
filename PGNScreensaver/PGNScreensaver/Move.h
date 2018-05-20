@@ -18,7 +18,7 @@
 @property (readonly) NSInteger toY;
 @property (readonly) ChessPieceType transformed;
 
-+ (instancetype)moveWithString:(NSString *)move;
++ (instancetype)moveFromString:(NSString *)move;
 - (instancetype)initWithMoveString:(NSString *)move;
 
 @end
