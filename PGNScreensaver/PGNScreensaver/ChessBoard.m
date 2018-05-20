@@ -71,7 +71,16 @@
 
 - (void)loadGame
 {
-    _gameManager = [GameManager managerWithFile:@"dummy.pgn"];
+    // TODO: load a PGN file from filename and parse a similar content to this hardcoded one
+    // Content extracted from output of command:
+    // ./pgn-extract ../macos-screensaver-pgn/DefaultGame.pgn
+    //     -Welalg -V -C -N --nochecks -w9999 -7 --nomovenumbers --noresults
+    // TODO: add some tests, like the ones below:
+    // "e2e4 c7c6 d2d4 d7d5 Nb1c3 d5e4 c3e4 Nb8d7 Qd1e2 Ng8f6 Ne4d6";
+    // "b2b4 g7g5 b4b5 g5g4 h2h4 g4h3 a2a3 c7c5
+    // "a2a8Q b7b1R";
+    _gameManager = [GameManager managerWithFile:@"DefaultGame.txt"];
+    NSLog(@"Game loaded WTF WTF WTF WTF now?");
     _moveCount = 0;
     [self setInitialPosition];
 }
