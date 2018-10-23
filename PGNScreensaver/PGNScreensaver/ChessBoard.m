@@ -100,9 +100,9 @@
     for (int y = 0; y < 8; ++y) {
         for (int x = 0; x < 8; ++x) {
             if ((x + y) % 2) {
-                [NSColor.chessBoardBrownDarkColor set];
-            } else {
                 [NSColor.chessBoardBrownLightColor set];
+            } else {
+                [NSColor.chessBoardBrownDarkColor set];
             }
             pieceRect = NSOffsetRect(pieceOriginRect, x * squareSize, y * squareSize);
             NSRectFill(pieceRect);
